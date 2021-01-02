@@ -18,7 +18,8 @@ export class Tab1Page {
   constructor(private auth: AuthService, private router: Router) {}
 
   login() {
-    this.auth.login(this.credentials).subscribe(() => {
+    this.auth.login(this.credentials).subscribe((data) => {
+      localStorage.setItem("token", data.token)
       this.router.navigateByUrl('dashboard')
     })
   }

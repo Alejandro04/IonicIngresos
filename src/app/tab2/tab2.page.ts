@@ -20,7 +20,8 @@ export class Tab2Page {
   constructor(private auth: AuthService, private router: Router) {}
 
   register() {
-    this.auth.register(this.credentials).subscribe(() => {
+    this.auth.register(this.credentials).subscribe((data) => {
+      localStorage.setItem("token", data.token)
       this.router.navigateByUrl('dashboard')
     })
   }
