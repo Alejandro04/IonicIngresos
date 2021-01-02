@@ -15,11 +15,11 @@
   
       <ion-card-content>
         <!-- Input with placeholder -->
-        <ion-input placeholder="Nombre" type="text"></ion-input>
-        <ion-input placeholder="Apellido" type="text"></ion-input>
-        <ion-input placeholder="Correo electrónico" type="email"></ion-input>
-        <ion-input placeholder="Password" type="password"></ion-input>
-        <ion-button expand="block">Registro</ion-button>
+        <ion-input placeholder="Nombre" type="text" [(ngModel)]="credentials.firstName"></ion-input>
+        <ion-input placeholder="Apellido" type="text" [(ngModel)]="credentials.lastName"></ion-input>
+        <ion-input placeholder="Correo electrónico" type="email" [(ngModel)]="credentials.email"></ion-input>
+        <ion-input placeholder="Password" type="password" [(ngModel)]="credentials.password"></ion-input>
+        <ion-button expand="block" (click)="register()">Registro</ion-button>
       </ion-card-content>
     </ion-card>
   </div>

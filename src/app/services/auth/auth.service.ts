@@ -23,4 +23,12 @@ export class AuthService {
     );
   }
 
+  public register(user: TokenPayload): Observable <any> {
+    return this.http.post(`${this.urlAuth}/api/register`, user).pipe(
+      map((data: TokenResponse) => {
+        return data;
+      })
+    );
+  }
+
 }

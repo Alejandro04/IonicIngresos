@@ -1,4 +1,7 @@
+import { Router } from '@angular/router';
+import { TokenResponse, TokenPayload } from './../models/auth.model';
 import { Component } from '@angular/core';
+import { AuthService } from '../services/auth/auth.service';
 
 @Component({
   selector: 'app-tab2',
@@ -6,7 +9,19 @@ import { Component } from '@angular/core';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
+  loginErrors: Array<{}> = new Array();
+  credentials: TokenPayload = {
+    email: '',
+    password: '',
+    firstName: '',
+    lastName: '',
+  }
 
-  constructor() {}
+  constructor(private auth: AuthService, private router: Router) {}
 
+  register() {
+    this.auth.register(this.credentials).subscribe(() => {
+      this.router.navigateByUrl('/dashboard');
+    })
+  }
 }
