@@ -21,7 +21,7 @@ export class Tab2Page {
 
   register() {
     this.auth.register(this.credentials).subscribe(() => {
-      this.router.navigateByUrl('/dashboard');
+      this.router.navigateByUrl('dashboard')
     })
   }
 }

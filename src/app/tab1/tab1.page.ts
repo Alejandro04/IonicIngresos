@@ -19,7 +19,7 @@ export class Tab1Page {
 
   login() {
     this.auth.login(this.credentials).subscribe(() => {
-      this.router.navigateByUrl('/dashboard');
+      this.router.navigateByUrl('dashboard')
     })
   }
 }
